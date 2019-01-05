@@ -12,7 +12,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .navbar-brand {
   padding-left: 1rem;
 }

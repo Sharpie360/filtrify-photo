@@ -10,7 +10,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .nav-item {
   width: 10rem;
   border-left: 1px solid #f7f7f7;
