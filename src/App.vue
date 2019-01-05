@@ -1,17 +1,19 @@
 <template>
-  <div id="app">
-    <app--navbar></app--navbar>
+  <div id="app" class="flexbox flexdir-col">
+    <main--navbar></main--navbar>
+    <main--container></main--container>
   </div>
 </template>
 
 <script>
 import Navbar from './components/navbar/Navbar';
+import MainContainer from './components/main/MainContainer';
 
 export default {
   name: 'app',
   components: {
-    'app--navbar': Navbar,
-
+    'main--navbar': Navbar,
+    'main--container': MainContainer,
   }
 };
 </script>
@@ -20,5 +22,7 @@ export default {
 @import './assets/css/flexbox-util.css';
 @import './assets/css/main.css';
 
-
+#app {
+  height: 100%;
+}
 </style>
