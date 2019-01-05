@@ -7,4 +7,6 @@
 html, body {
   font-size: 20px;
   height: 100vh;
+  color: #f7f7f7;
+  font-family: sans-serif;
 }

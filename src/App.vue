@@ -1,14 +1,18 @@
 <template>
   <div id="app">
-    <h1>Hello Youtube!</h1>
+    <app--navbar></app--navbar>
   </div>
 </template>
 
 <script>
+import Navbar from './components/navbar/Navbar';
 
 export default {
   name: 'app',
+  components: {
+    'app--navbar': Navbar,
 
+  }
 };
 </script>
 
@@ -16,11 +20,5 @@ export default {
 @import './assets/css/flexbox-util.css';
 @import './assets/css/main.css';
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+
 </style>
