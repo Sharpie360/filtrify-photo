@@ -1,12 +1,19 @@
 <template>
   <div class="control-panel flex-1 flexbox flexdir-col">
-    control panel
+    <image-loader></image-loader>
+    <filter-panel></filter-panel>
   </div>
 </template>
 
 <script>
-export default {
+import ImageLoader from './ImageLoader';
+import FilterPanel from './FilterPanel';
 
+export default {
+  components: {
+    'image-loader': ImageLoader,
+    'filter-panel': FilterPanel,
+  }
 }
 </script>
 
