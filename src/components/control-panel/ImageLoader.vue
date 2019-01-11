@@ -9,6 +9,7 @@
     <div class="image-loader--input-wrapper flex-1">
       <input 
         v-model="imageSrc"
+        @input="setImageSource"
         type="text" 
         class="image-loader--input"
         id="image-loader--input"
@@ -19,10 +20,17 @@
 </template>
 
 <script>
+import eventBus from '../../eventBus.js';
+
 export default {
   data () {
     return {
       imageSrc: ''
+    }
+  },
+  methods: {
+    setImageSource() {
+      eventBus.$emit('setImageSource', this.imageSrc);
     }
   }
 }
