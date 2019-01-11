@@ -1,15 +1,44 @@
 <template>
-  <div class="flex-1">
-    Image Loader Cmp
+  <div class="image-loader--outer flex-1 flexbox flexdir-col">
+    <label 
+      class="image-loader--label flex-1"
+      for="image-loader--input"
+      >Load Image
+    </label>
+
+    <div class="image-loader--input-wrapper flex-1">
+      <input 
+        v-model="imageSrc"
+        type="text" 
+        class="image-loader--input"
+        id="image-loader--input"
+      >
+    </div>
+    
   </div>
 </template>
 
 <script>
 export default {
-
+  data () {
+    return {
+      imageSrc: ''
+    }
+  }
 }
 </script>
 
-<style>
-
+<style scoped>
+.image-loader--outer {
+  padding: .5rem 1rem;
+}
+.image-loader--label {
+  font-size: 170%;
+}
+.image-loader--input {
+  font-size: 1.1rem;
+  padding: .25rem .5rem;
+  border: 2px solid #212121;
+  border-radius: 3px;
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="filter-panel flex-5">
+  <div class="filter-panel flex-6">
     
   </div>
 </template>
@@ -12,6 +12,6 @@ export default {
 
 <style>
   .filter-panel {
-    border-top: 3px solid #f7f7f7;
+    border-top: 3px solid var(--navbarBlack);
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-5">
+  <div class="display-container--outer flex-5">
     Hello from the awesome display container
   </div>
 </template>
@@ -10,6 +10,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.display-container--outer {
+  background-color: var(--offWhite);
+}
 </style>

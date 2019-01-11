@@ -20,7 +20,8 @@ export default {
 
 <style scoped>
   .navbar--outer {
-    height: 80px;
-    background-color: #212121;
+    height: 4rem;
+    background-color: var(--navbarBlack);
+    color: var(--offWhite);
   }
 </style>

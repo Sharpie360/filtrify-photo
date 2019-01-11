@@ -18,7 +18,5 @@ export default {
 </script>
 
 <style>
-.main--container {
-  background-color: #35857e;
-}
+
 </style>

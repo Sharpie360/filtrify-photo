@@ -17,8 +17,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .control-panel {
-  border-right: 3px solid #f7f7f7;
+  border-right: 3px solid var(--navbarBlack);
+  background-color: var(--lightGreen);
 }
 </style>
