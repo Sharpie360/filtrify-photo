@@ -14,7 +14,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .display-container--outer {
   background-color: var(--offWhite);
 }

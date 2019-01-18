@@ -24,9 +24,18 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .display-image {
   max-width: 90%;
   max-height: 96%;
+
+  filter: 
+    brightness(var(--brightness))
+    contrast(var(--contrast))
+    grayscale(var(--greyscale))
+    hue-rotate(var(--hue-rotate))
+    invert(var(--invert))
+    saturate(var(--saturate))
+    sepia(var(--sepia));
 }
 </style>

@@ -7,7 +7,7 @@
 
 <script>
 import ImageLoader from './ImageLoader';
-import FilterPanel from './FilterPanel';
+import FilterPanel from './filter-panel/FilterPanel';
 
 export default {
   components: {
