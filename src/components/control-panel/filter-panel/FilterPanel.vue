@@ -18,64 +18,13 @@
 import FilterInput from './FilterInput';
 
 export default {
-  data () {
-    return {
-      filters: [
-        {
-          name: 'brightness',
-          min: 50,
-          max: 150,
-          current: 100,
-          suffix: '%',
-        },
-        {
-          name: 'contrast',
-          min: 0,
-          max: 250,
-          current: 100,
-          suffix: '%',
-        },
-        {
-          name: 'greyscale',
-          min: 0,
-          max: 100,
-          current: 0,
-          suffix: '%',
-        },
-        {
-          name: 'hue-rotate',
-          min: 0,
-          max: 360,
-          current: 0,
-          suffix: 'deg',
-        },
-        {
-          name: 'invert',
-          min: 0,
-          max: 100,
-          current: 0,
-          suffix: '%',
-        },
-        {
-          name: 'saturate',
-          min: 0,
-          max: 250,
-          current: 100,
-          suffix: '%',
-        },
-        {
-          name: 'sepia',
-          min: 0,
-          max: 100,
-          current: 0,
-          suffix: '%',
-        },
-
-      ]
-    }
-  },
   components: {
     'filter-input': FilterInput
+  },
+  computed: {
+    filters () {
+      return this.$store.getters.getFilters;
+    }
   }
 }
 </script>

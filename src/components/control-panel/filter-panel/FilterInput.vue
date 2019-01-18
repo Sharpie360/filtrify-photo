@@ -21,7 +21,8 @@ export default {
   props: ['filter'],
   methods: {
     updateFilterValue(filter) {
-      console.log(filter.name, `${filter.current}${filter.suffix}`)
+      console.log(`--${filter.name}`, `${filter.current}${filter.suffix}`)
+      document.documentElement.style.setProperty(`--${filter.name}`, `${filter.current}${filter.suffix}`)
     }
   }
 }

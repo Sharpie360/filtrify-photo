@@ -1,7 +1,7 @@
 <template>
   <img 
-    v-if="imageSrc" 
-    :src="imageSrc"
+    v-if="imageSource" 
+    :src="imageSource"
     class="display-image">
   <h4 v-else>please load an image</h4>
 
@@ -11,9 +11,9 @@
 import eventBus from '../../eventBus.js';
 
 export default {
-  data () {
-    return {
-      imageSrc: ''
+  computed: {
+    imageSource () {
+      return this.$store.getters.getImage;
     }
   },
   mounted() {

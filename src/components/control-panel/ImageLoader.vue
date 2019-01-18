@@ -8,8 +8,7 @@
 
     <div class="image-loader--input-wrapper flex-1">
       <input 
-        v-model="imageSrc"
-        @input="setImageSource"
+        @input="setImageSource_STORE($event.target.value)"
         type="text" 
         class="image-loader--input"
         id="image-loader--input"
@@ -21,17 +20,11 @@
 
 <script>
 import eventBus from '../../eventBus.js';
+import { mapActions } from 'vuex';
 
 export default {
-  data () {
-    return {
-      imageSrc: ''
-    }
-  },
   methods: {
-    setImageSource() {
-      eventBus.$emit('setImageSource', this.imageSrc);
-    }
+    ...mapActions(['setImageSource_STORE'])
   }
 }
 </script>
