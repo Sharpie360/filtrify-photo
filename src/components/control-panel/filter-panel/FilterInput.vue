@@ -17,12 +17,22 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
-  props: ['filter'],
+  props: ['filter', 'index'],
   methods: {
+    ...mapActions(['setFilterValue_STORE']),
     updateFilterValue(filter) {
-      console.log(`--${filter.name}`, `${filter.current}${filter.suffix}`)
-      document.documentElement.style.setProperty(`--${filter.name}`, `${filter.current}${filter.suffix}`)
+      console.log(this.index)
+      const payload = {
+        index: this.index,
+        filterNewValue: filter.current,
+      };
+      this.setFilterValue_STORE(payload);
+
+
+      
     }
   }
 }

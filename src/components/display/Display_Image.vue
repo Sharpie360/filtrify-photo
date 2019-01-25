@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import eventBus from '../../eventBus.js';
 
 export default {
   computed: {
@@ -16,11 +15,6 @@ export default {
       return this.$store.getters.getImage;
     }
   },
-  mounted() {
-    eventBus.$on('setImageSource', imageSrc => {
-      this.imageSrc = imageSrc;
-    })
-  }
 }
 </script>
 

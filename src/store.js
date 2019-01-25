@@ -9,6 +9,7 @@ const store = new Vuex.Store({
     imageSource: '',
     filters: [
       {
+        index: '',
         name: 'brightness',
         min: 50,
         max: 150,
@@ -16,6 +17,7 @@ const store = new Vuex.Store({
         suffix: '%',
       },
       {
+        index: '',
         name: 'contrast',
         min: 0,
         max: 250,
@@ -23,6 +25,7 @@ const store = new Vuex.Store({
         suffix: '%',
       },
       {
+        index: '',
         name: 'greyscale',
         min: 0,
         max: 100,
@@ -30,6 +33,7 @@ const store = new Vuex.Store({
         suffix: '%',
       },
       {
+        index: '',
         name: 'hue-rotate',
         min: 0,
         max: 360,
@@ -37,6 +41,7 @@ const store = new Vuex.Store({
         suffix: 'deg',
       },
       {
+        index: '',
         name: 'invert',
         min: 0,
         max: 100,
@@ -44,6 +49,7 @@ const store = new Vuex.Store({
         suffix: '%',
       },
       {
+        index: '',
         name: 'saturate',
         min: 0,
         max: 250,
@@ -51,6 +57,7 @@ const store = new Vuex.Store({
         suffix: '%',
       },
       {
+        index: '',
         name: 'sepia',
         min: 0,
         max: 100,
@@ -62,16 +69,26 @@ const store = new Vuex.Store({
   getters: {
     getImage: state => state.imageSource,
     getFilters: state => state.filters,
+    getFilter: state => index => state.filters[index],
   },
   mutations: {
     setImageSource_MUTA(state, payload) {
       state.imageSource = payload;
+    },
+
+    setFilterValue_MUTA(state, payload) {
+      state.filters[payload.index].index = payload.index;
+      state.filters[payload.index].current = payload.filterNewValue;
     },
   },
   actions: {
     // payload = imageSource
     setImageSource_STORE(context, payload) {
       context.commit('setImageSource_MUTA', payload);
+    },
+
+    setFilterValue_STORE(context, payload) {
+      context.commit('setFilterValue_MUTA', payload);
     },
   },
 });

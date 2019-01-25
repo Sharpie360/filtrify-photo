@@ -6,6 +6,7 @@
       <filter-input 
         v-for="(filter, index) in filters" :key="index"
         :filter="filter"
+        :index="index"
         class="flex-1">
       </filter-input>
 
