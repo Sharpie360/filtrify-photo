@@ -6,7 +6,11 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    imageSource: '',
+    image: {
+      width: 0,
+      height: 0,
+      source: '',
+    },
     filters: [
       {
         index: '',
@@ -67,18 +71,24 @@ const store = new Vuex.Store({
     ],
   },
   getters: {
-    getImage: state => state.imageSource,
+    getImage: state => state.image,
+    getImageSource: state => state.image.source,
     getFilters: state => state.filters,
     getFilter: state => index => state.filters[index],
   },
   mutations: {
     setImageSource_MUTA(state, payload) {
-      state.imageSource = payload;
+      state.image.source = payload;
     },
 
     setFilterValue_MUTA(state, payload) {
       state.filters[payload.index].index = payload.index;
       state.filters[payload.index].current = payload.filterNewValue;
+    },
+
+    setImageSize_MUTA(state, payload) {
+      state.image.width = payload.width;
+      state.image.height = payload.height;
     },
   },
   actions: {
@@ -89,6 +99,10 @@ const store = new Vuex.Store({
 
     setFilterValue_STORE(context, payload) {
       context.commit('setFilterValue_MUTA', payload);
+    },
+
+    setImageSize_STORE(context, payload) {
+      context.commit('setImageSize_MUTA', payload);
     },
   },
 });

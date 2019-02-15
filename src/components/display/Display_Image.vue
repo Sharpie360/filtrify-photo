@@ -8,13 +8,40 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 
 export default {
-  computed: {
-    imageSource () {
-      return this.$store.getters.getImage;
+  data () {
+    return {
+      width: 0,
+      height: 0,
     }
   },
+  computed: {
+    imageSource () {
+      return this.$store.getters.getImageSource;
+    },
+  },
+  watch: {
+    imageSource: function(val) {
+      setTimeout(() => {
+        this.getImageSize();
+      }, 500);
+    }
+  },
+  methods: {
+    ...mapActions(['setImageSize_STORE']),
+    getImageSize() {
+      const image = document.querySelector('.display-image');
+      const imageCompedStyles = window.getComputedStyle(image);
+      console.log(imageCompedStyles.width, imageCompedStyles.height)
+      const payload = {
+        width: imageCompedStyles.width,
+        height: imageCompedStyles.height,
+      };
+      this.setImageSize_STORE(payload);
+    }
+  }
 }
 </script>
 
