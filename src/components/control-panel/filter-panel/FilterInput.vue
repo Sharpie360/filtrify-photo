@@ -5,8 +5,8 @@
     </label>
     <input 
       v-model="filter.current"
-      @mousemove="updateFilterValue(filter)"
       @change="updateFilterValue(filter)"
+      
       :id="filter.name"
       :min="filter.min"
       :max="filter.max"
@@ -24,16 +24,13 @@ export default {
   methods: {
     ...mapActions(['setFilterValue_STORE']),
     updateFilterValue(filter) {
-      console.log(this.index)
+      //console.log(this.index)
       const payload = {
         index: this.index,
         filterNewValue: filter.current,
       };
       this.setFilterValue_STORE(payload);
-
-
-      
-    }
+    },
   }
 }
 </script>

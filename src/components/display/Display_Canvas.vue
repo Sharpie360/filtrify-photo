@@ -1,7 +1,7 @@
 <template>
   <canvas 
     id="canvas"
-    v-show="true"
+    v-show="false"
     :width="image.width"
     :height="image.height">
   </canvas>
@@ -17,21 +17,7 @@ export default {
       return this.$store.getters.getFilters;
     }
   },
-  watch: {
-    filters: {
-      deep: true,
-      handler() {
-        console.log('test from filters watcher')
-        this.loadImageToCanvas();
-      }
-    },
-    image: function() {
-      setTimeout(() => {
-      console.log('test from image watcher')
-        this.loadImageToCanvas();
-      }, 1000)
-    }
-  },
+
   methods: {
     loadImageToCanvas() {
       const filters = this.filters;
@@ -43,7 +29,7 @@ export default {
       // console.log(filterString)
 
       const image = document.querySelector('.display-image');
-      if (image instanceof HTMLImageElement) {
+      if (image) {
         const canvas = document.getElementById('canvas');
         let ctx = canvas.getContext('2d');
         ctx.filter = filterString;

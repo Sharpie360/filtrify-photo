@@ -13,7 +13,7 @@ const store = new Vuex.Store({
     },
     filters: [
       {
-        index: '',
+        index: 0,
         name: 'brightness',
         min: 50,
         max: 150,
@@ -21,7 +21,7 @@ const store = new Vuex.Store({
         suffix: '%',
       },
       {
-        index: '',
+        index: 1,
         name: 'contrast',
         min: 0,
         max: 250,
@@ -29,15 +29,15 @@ const store = new Vuex.Store({
         suffix: '%',
       },
       {
-        index: '',
-        name: 'greyscale',
+        index: 2,
+        name: 'grayscale',
         min: 0,
         max: 100,
         current: 0,
         suffix: '%',
       },
       {
-        index: '',
+        index: 3,
         name: 'hue-rotate',
         min: 0,
         max: 360,
@@ -45,7 +45,7 @@ const store = new Vuex.Store({
         suffix: 'deg',
       },
       {
-        index: '',
+        index: 4,
         name: 'invert',
         min: 0,
         max: 100,
@@ -53,7 +53,7 @@ const store = new Vuex.Store({
         suffix: '%',
       },
       {
-        index: '',
+        index: 5,
         name: 'saturate',
         min: 0,
         max: 250,
@@ -61,7 +61,7 @@ const store = new Vuex.Store({
         suffix: '%',
       },
       {
-        index: '',
+        index: 6,
         name: 'sepia',
         min: 0,
         max: 100,
@@ -81,9 +81,9 @@ const store = new Vuex.Store({
       state.image.source = payload;
     },
 
-    setFilterValue_MUTA(state, payload) {
-      state.filters[payload.index].index = payload.index;
-      state.filters[payload.index].current = payload.filterNewValue;
+    setFilterValue_MUTA(state, { index, filterNewValue }) {
+      state.filters[index].index = index;
+      state.filters[index].current = filterNewValue;
     },
 
     setImageSize_MUTA(state, payload) {
@@ -93,16 +93,16 @@ const store = new Vuex.Store({
   },
   actions: {
     // payload = imageSource
-    setImageSource_STORE(context, payload) {
-      context.commit('setImageSource_MUTA', payload);
+    setImageSource_STORE({ commit }, payload) {
+      commit('setImageSource_MUTA', payload);
     },
 
-    setFilterValue_STORE(context, payload) {
-      context.commit('setFilterValue_MUTA', payload);
+    setFilterValue_STORE({ commit }, payload) {
+      commit('setFilterValue_MUTA', payload);
     },
 
-    setImageSize_STORE(context, payload) {
-      context.commit('setImageSize_MUTA', payload);
+    setImageSize_STORE({ commit }, payload) {
+      commit('setImageSize_MUTA', payload);
     },
   },
 });
