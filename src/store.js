@@ -82,8 +82,9 @@ const store = new Vuex.Store({
     },
 
     setFilterValue_MUTA(state, { index, filterNewValue }) {
-      state.filters[index].index = index;
-      state.filters[index].current = filterNewValue;
+      Vue.set(state.filters, index, { ...state.filters[index], index, current: filterNewValue });
+      // state.filters[index].index = index;
+      // state.filters[index].current = filterNewValue;
     },
 
     setImageSize_MUTA(state, payload) {
