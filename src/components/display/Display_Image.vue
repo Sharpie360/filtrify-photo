@@ -1,9 +1,11 @@
 <template>
   <img 
-    v-if="imageSource" 
-    :src="imageSource"
+    v-show="imageSource" 
+    :style="{ 'filter': filters }"
+    crossorigin="Anonymous"
+    ref="image"
     class="display-image">
-  <h4 v-else>please load an image</h4>
+  
 
 </template>
 
@@ -21,9 +23,22 @@ export default {
     imageSource () {
       return this.$store.getters.getImageSource;
     },
+    filters () {
+      const filters = this.$store.getters.getFilters;
+      let filterString = '';
+      filters.forEach(filter => {
+        // const { name, current, suffix } = filter;
+        filterString += `${filter.name}(${filter.current}${filter.suffix}) `;
+      })
+      filterString = filterString.trim();
+      console.log(filterString);
+      return filterString;
+    }
   },
   watch: {
     imageSource: function(val) {
+      this.$refs.image.src = this.imageSource;
+      console.log(this.$refs.image.src)
       setTimeout(() => {
         this.getImageSize();
       }, 500);
@@ -49,14 +64,5 @@ export default {
 .display-image {
   max-width: 90%;
   max-height: 96%;
-
-  filter: 
-    brightness(var(--brightness))
-    contrast(var(--contrast))
-    grayscale(var(--greyscale))
-    hue-rotate(var(--hue-rotate))
-    invert(var(--invert))
-    saturate(var(--saturate))
-    sepia(var(--sepia));
 }
 </style>

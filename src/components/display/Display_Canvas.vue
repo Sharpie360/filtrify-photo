@@ -1,7 +1,7 @@
 <template>
   <canvas 
     id="canvas"
-    v-show="true"
+    v-show="false"
     :width="image.width"
     :height="image.height">
   </canvas>

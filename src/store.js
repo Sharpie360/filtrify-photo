@@ -30,7 +30,7 @@ const store = new Vuex.Store({
       },
       {
         index: '',
-        name: 'greyscale',
+        name: 'grayscale',
         min: 0,
         max: 100,
         current: 0,
