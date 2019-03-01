@@ -1,7 +1,7 @@
 <template>
   <div class="filter-input--outer">
     <label :for="filter.name"
-      >{{ filter.name }}
+      >{{ filter.name | capitalize }}
     </label>
     <input 
       v-model="filter.current"
@@ -21,6 +21,13 @@ import { mapActions } from 'vuex';
 
 export default {
   props: ['filter', 'index'],
+  filters: {
+    capitalize: function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
+    }
+  },
   methods: {
     ...mapActions(['setFilterValue_STORE']),
     updateFilterValue(filter) {
@@ -30,9 +37,6 @@ export default {
         filterNewValue: filter.current,
       };
       this.setFilterValue_STORE(payload);
-
-
-      
     }
   }
 }

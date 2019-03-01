@@ -32,6 +32,7 @@ export default {
 <style scoped>
 .image-loader--outer {
   padding: .5rem 1rem;
+  min-height: 7rem;
 }
 .image-loader--label {
   font-size: 170%;
