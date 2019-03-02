@@ -66,7 +66,7 @@ Ep. 07
   * [x] move away from css variables for filters
 * [x] Set Cross Origin to Anonymous [remember.remember.the.5th.of.november]
 * [x] Set dynamic styling of filters
-* [ ] clean up design
+* [x] clean up design
   * [x] Vue filter the filter names
   * [x] Add min-height to image-loader component
 * [ ] Reset Filters Button component

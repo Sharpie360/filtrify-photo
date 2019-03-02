@@ -13,7 +13,7 @@ export default {
 <style>
 .save-image-panel--outer {
   min-height: 7rem;
-  border-top: 3px solid var(--navbarBlack)
+  border-top: 3px solid var(--navbarBlack);
 }
 </style>
 
