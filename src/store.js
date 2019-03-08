@@ -10,6 +10,7 @@ const store = new Vuex.Store({
       width: 0,
       height: 0,
       source: '',
+      customImageName: '',
     },
     filters: [
       {
@@ -74,7 +75,7 @@ const store = new Vuex.Store({
     getImage: state => state.image,
     getImageSource: state => state.image.source,
     getFilters: state => state.filters,
-    getFilter: state => index => state.filters[index],
+    getCustomName: state => state.image.customImageName,
   },
   mutations: {
     setImageSource_MUTA(state, payload) {
@@ -89,6 +90,11 @@ const store = new Vuex.Store({
     setImageSize_MUTA(state, payload) {
       state.image.width = payload.width;
       state.image.height = payload.height;
+    },
+
+    // payload === value
+    setCustomImageName_MUTA(state, payload) {
+      state.image.customImageName = payload;
     },
   },
   actions: {

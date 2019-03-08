@@ -69,10 +69,13 @@ Ep. 07
 * [x] clean up design
   * [x] Vue filter the filter names
   * [x] Add min-height to image-loader component
+
+
+
+Ep. 08
 * [ ] Reset Filters Button component
 * [ ] Download Image Button component
-
-
+  * [ ] Custom Name for Downloaded Image
 
 
 **SPRINT**

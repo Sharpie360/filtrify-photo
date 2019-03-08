@@ -27,8 +27,8 @@ export default {
       const filters = this.$store.getters.getFilters;
       let filterString = '';
       filters.forEach(filter => {
-        // const { name, current, suffix } = filter;
-        filterString += `${filter.name}(${filter.current}${filter.suffix}) `;
+        const { name, current, suffix } = filter;
+        filterString += `${name}(${current}${suffix}) `;
       })
       filterString = filterString.trim();
       console.log(filterString);
