@@ -78,6 +78,11 @@ Ep. 08
   * [ ] Custom Name for Downloaded Image
 
 
+Ep. 09
+* [ ] Custom Google Font
+* [ ] Download Logic
+
+
 **SPRINT**
 * [ ] Routerify our App
   * [ ] Pull in Vue-Router

@@ -5,7 +5,9 @@
   --navbarBlack-80: rgba(33, 33, 33, 0.8);
   --offWhite: rgb(247, 247, 247);
   --lightGreen: rgba(61, 199, 157, 0.8);
-
+  --accentColor: rgb(50, 182, 175);
+  --accentColorHover: rgb(71, 196, 189);
+  --accentColorActive: rgb(58, 163, 158);
 }
 
 * {
@@ -19,4 +21,8 @@ html, body {
   height: 100vh;
   color: var(--navbarBlack);
   font-family: sans-serif;
+}
+
+.pointer {
+  cursor: pointer;
 }
