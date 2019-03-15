@@ -73,14 +73,16 @@ Ep. 07
 
 
 Ep. 08
-* [ ] Reset Filters Button component
-* [ ] Download Image Button component
-  * [ ] Custom Name for Downloaded Image
+* [x] Download Image Button component
+  * [x] Custom Name for Downloaded Image
 
 
 Ep. 09
-* [ ] Custom Google Font
+* [x] Custom Google Font
 * [ ] Download Logic
+* [ ] Update getImageSize Fn
+* [ ] Reset Filters Button component
+* [ ] Display Filter Values
 
 
 **SPRINT**

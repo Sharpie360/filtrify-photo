@@ -16,4 +16,7 @@ export default {
 .navbar-brand {
   padding-left: 1rem;
 }
+.navbar-brand--text {
+  letter-spacing: .5px;
+}
 </style>
