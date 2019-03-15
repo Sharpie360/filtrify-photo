@@ -20,19 +20,24 @@ export default {
   methods: {
     downloadImage() {
       
-      const imageToDownload = new Image(this.image.width, this.image.height);
+      const imageToDownload = new Image(this.image.width.substring(0, this.image.width.length ), this.image.height.substring(0, this.image.height.length - 2));
+      imageToDownload.crossOrigin = 'Anonymous';
       imageToDownload.onload = () => {
         let canvas = document.createElement('canvas');
-        canvas.width = this.image.width;
-        canvas.height = this.image.height;
+        canvas.width = this.image.width.substring(0, this.image.width.length - 2);
+        canvas.height = this.image.height.substring(0, this.image.height.length - 2);
         const ctx = canvas.getContext('2d');
         ctx.filter = this.image.filterString;
-        ctx.drawImage(imageToDownload, 0, 0, this.image.width, this.image.height);
+        ctx.drawImage(imageToDownload, 0, 0, this.image.width.substring(0, this.image.width.length ), this.image.height.substring(0, this.image.height.length - 2));
         console.log(canvas)
         console.log(ctx)
         canvas.toBlob(blob => {
           console.log(blob)
           const link = document.createElement('a');
+          const url = URL.createObjectURL(blob);
+          link.setAttribute('href', url);
+          link.setAttribute('download', 'filtered_image');
+          link.click();
         })
       }
       imageToDownload.src = this.image.source;
