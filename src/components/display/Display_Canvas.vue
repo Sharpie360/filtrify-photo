@@ -21,13 +21,11 @@ export default {
     filters: {
       deep: true,
       handler() {
-        console.log('test from filters watcher')
         this.loadImageToCanvas();
       }
     },
     image: function() {
       setTimeout(() => {
-      console.log('test from image watcher')
         this.loadImageToCanvas();
       }, 1000)
     }
@@ -40,14 +38,12 @@ export default {
         filterString += `${filter.name}(${filter.current}${filter.suffix}) `
       });
       filterString = filterString.trim();
-      // console.log(filterString)
 
       const image = document.querySelector('.display-image');
       if (image instanceof HTMLImageElement) {
         const canvas = document.getElementById('canvas');
         let ctx = canvas.getContext('2d');
         ctx.filter = filterString;
-        console.log(image);
         ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
       }
     }

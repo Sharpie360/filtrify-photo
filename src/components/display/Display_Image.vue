@@ -32,6 +32,7 @@ export default {
       })
       filterString = filterString.trim();
       console.log(filterString);
+      this.setFilterString_STORE(filterString);
       return filterString;
     }
   },
@@ -45,7 +46,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['setImageSize_STORE']),
+    ...mapActions(['setImageSize_STORE', 'setFilterString_STORE']),
     getImageSize() {
       const image = document.querySelector('.display-image');
       const imageCompedStyles = window.getComputedStyle(image);

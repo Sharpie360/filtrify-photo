@@ -31,7 +31,6 @@ export default {
   methods: {
     ...mapActions(['setFilterValue_STORE']),
     updateFilterValue(filter) {
-      console.log(this.index)
       const payload = {
         index: this.index,
         filterNewValue: filter.current,

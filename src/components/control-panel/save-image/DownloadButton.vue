@@ -2,6 +2,7 @@
 
 <div class="download-button--outer flexbox flex-1 flex-justify-end">
   <button
+    @click="downloadImage"
     class="download-button--inner pointer"
     >Download
   </button>
@@ -11,7 +12,34 @@
 
 <script>
 export default {
+  computed: {
+    image() {
+      return this.$store.getters.getImage;
+    }
+  },
+  methods: {
+    downloadImage() {
+      
+      const imageToDownload = new Image(this.image.width, this.image.height);
+      imageToDownload.onload = () => {
+        let canvas = document.createElement('canvas');
+        canvas.width = this.image.width;
+        canvas.height = this.image.height;
+        const ctx = canvas.getContext('2d');
+        ctx.filter = this.image.filterString;
+        ctx.drawImage(imageToDownload, 0, 0, this.image.width, this.image.height);
+        console.log(canvas)
+        console.log(ctx)
+        canvas.toBlob(blob => {
+          console.log(blob)
+          const link = document.createElement('a');
+        })
+      }
+      imageToDownload.src = this.image.source;
 
+
+    }
+  }
 }
 </script>
 
