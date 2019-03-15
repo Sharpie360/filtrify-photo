@@ -81,7 +81,7 @@ Ep. 09
 * [x] Custom Google Font
 * [ ] Download Logic
   * [ ] Update getImageSize Fn
-* [ ] Overflow Scroll on Filters Panel :)
+* [x] Overflow Scroll on Filters Panel :)
 * [ ] Reset Filters Button component
 * [ ] Display Filter Values
 

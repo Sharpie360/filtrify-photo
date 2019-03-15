@@ -1,8 +1,6 @@
 <template>
   <div class="filter-input--outer">
-    <label :for="filter.name"
-      >{{ filter.name | capitalize }}
-    </label>
+    <filter-info :filter="filter"></filter-info>
     <input 
       v-model="filter.current"
       @mousemove="updateFilterValue(filter)"
@@ -17,16 +15,13 @@
 </template>
 
 <script>
+import FilterInfo from './FilterInfo';
 import { mapActions } from 'vuex';
 
 export default {
   props: ['filter', 'index'],
-  filters: {
-    capitalize: function (value) {
-      if (!value) return ''
-      value = value.toString()
-      return value.charAt(0).toUpperCase() + value.slice(1)
-    }
+  components: {
+    'filter-info': FilterInfo
   },
   methods: {
     ...mapActions(['setFilterValue_STORE']),
@@ -42,15 +37,8 @@ export default {
 </script>
 
 <style scoped>
-label {
-  display: block;
-  font-size: 110%;
-  margin-bottom: .4rem;
-}
-
 .filter-input--input {
   width: 100%;
 }
-
 </style>
 

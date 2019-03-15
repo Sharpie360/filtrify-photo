@@ -32,12 +32,16 @@ export default {
 
 <style scoped>
 .filter-panel {
-  padding: .5rem 1rem;
+  padding: .5rem .5rem .5rem 1rem;
   border-top: 3px solid var(--navbarBlack);
 }
 .filter-panel--title {
   font-weight: 500;
   font-size: 170%;
   margin-bottom: 1rem;
+}
+.filter-panel--input-group-wrapper {
+  overflow-y: scroll;
+  padding-right: 1rem;
 }
 </style>
