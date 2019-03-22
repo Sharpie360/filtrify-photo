@@ -20,6 +20,7 @@ const store = new Vuex.Store({
         min: 50,
         max: 150,
         current: 100,
+        default: 100,
         suffix: '%',
       },
       {
@@ -28,6 +29,7 @@ const store = new Vuex.Store({
         min: 0,
         max: 250,
         current: 100,
+        default: 100,
         suffix: '%',
       },
       {
@@ -36,6 +38,7 @@ const store = new Vuex.Store({
         min: 0,
         max: 100,
         current: 0,
+        default: 0,
         suffix: '%',
       },
       {
@@ -44,6 +47,7 @@ const store = new Vuex.Store({
         min: 0,
         max: 360,
         current: 0,
+        default: 0,
         suffix: 'deg',
       },
       {
@@ -52,6 +56,7 @@ const store = new Vuex.Store({
         min: 0,
         max: 100,
         current: 0,
+        default: 0,
         suffix: '%',
       },
       {
@@ -60,6 +65,7 @@ const store = new Vuex.Store({
         min: 0,
         max: 250,
         current: 100,
+        default: 100,
         suffix: '%',
       },
       {
@@ -68,6 +74,7 @@ const store = new Vuex.Store({
         min: 0,
         max: 100,
         current: 0,
+        default: 0,
         suffix: '%',
       },
     ],
@@ -102,6 +109,18 @@ const store = new Vuex.Store({
     setFilterString_MUTA(state, payload) {
       state.image.filterString = payload;
     },
+
+    resetFilters_MUTA(state) {
+      state.filters.forEach((filter) => {
+        filter.current = filter.default;
+      });
+    },
+
+    // payload === index
+    resetFilter_MUTA(state, payload) {
+      state.filters[payload].current = state.filters[payload].default;
+    },
+
   },
   actions: {
     // payload = imageSource
@@ -119,6 +138,14 @@ const store = new Vuex.Store({
 
     setFilterString_STORE({ commit }, payload) {
       commit('setFilterString_MUTA', payload);
+    },
+
+    resetFilters_STORE({ commit }) {
+      commit('resetFilters_MUTA');
+    },
+
+    resetFilter_STORE({ commit }, payload) {
+      commit('resetFilter_MUTA', payload);
     },
   },
 });

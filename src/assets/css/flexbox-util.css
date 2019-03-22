@@ -143,6 +143,9 @@
   flex: 20 !important;
 }
 /* classes for wrapper element to align children */
+
+/* write classes for justify content withOUT flex rules! */
+
 .flex-center {
   justify-content: center;
   align-items: center;

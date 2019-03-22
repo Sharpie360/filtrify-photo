@@ -5,6 +5,7 @@
       v-model="filter.current"
       @mousemove="updateFilterValue(filter)"
       @change="updateFilterValue(filter)"
+      @dblclick="resetFilter_STORE(index)"
       :id="filter.name"
       :min="filter.min"
       :max="filter.max"
@@ -24,7 +25,7 @@ export default {
     'filter-info': FilterInfo
   },
   methods: {
-    ...mapActions(['setFilterValue_STORE']),
+    ...mapActions(['setFilterValue_STORE', 'resetFilter_STORE']),
     updateFilterValue(filter) {
       const payload = {
         index: this.index,

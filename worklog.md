@@ -85,15 +85,15 @@ Ep. 09
 Ep. 10
 * [x] Download Logic
   * [x] Update getImageSize Fn
-* [ ] Reset Filters Button component
-* [ ] Reset Filter Double Click Event
+* [x] Reset Filters Button component
+* [x] Reset Filter Double Click Event
 * [ ] Custom File Name input
-  * [ ] PNG or JPG option?
-  * [ ] Build Component
-  * [ ] V-Model Select
 * [ ] Display original Image dimensions
 
 Ep. 11
+* [ ] PNG or JPG option?
+  * [ ] Build Component
+  * [ ] V-Model Select
 * [ ] Clean up code
   * [ ] remove console logs
   * [ ] 

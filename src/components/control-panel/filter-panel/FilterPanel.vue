@@ -1,6 +1,16 @@
 <template>
   <div class="filter-panel flex-6 flexbox flexdir-col">
-    <h2 class="filter-panel--title">Filters</h2>
+    <div class="filter-panel--header-group flexbox">
+      <h2 class="filter-panel--title">Filters</h2>
+      <span class="filter-reset-icon--outer">
+        <img 
+          @click="resetFilters_STORE"
+          class="filter-reset-icon--svg" 
+          src="../../../assets/svg/noun_reset_415758.svg" 
+          alt="reset by Hali Gali Harun from the Noun Project"
+        >
+      </span>
+    </div>
 
     <div class="filter-panel--input-group-wrapper flex-1 flexbox flexdir-col">
       <filter-input 
@@ -16,6 +26,8 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 import FilterInput from './FilterInput';
 
 export default {
@@ -26,6 +38,9 @@ export default {
     filters () {
       return this.$store.getters.getFilters;
     }
+  },
+  methods: {
+    ...mapActions(['resetFilters_STORE']),
   }
 }
 </script>
@@ -35,6 +50,9 @@ export default {
   padding: .5rem .5rem .5rem 1rem;
   border-top: 3px solid var(--navbarBlack);
 }
+.filter-panel--header-group {
+  justify-content: space-between;
+}
 .filter-panel--title {
   font-weight: 500;
   font-size: 170%;
@@ -43,5 +61,13 @@ export default {
 .filter-panel--input-group-wrapper {
   overflow-y: scroll;
   padding-right: 1rem;
+}
+.filter-reset-icon--outer {
+  height: 2.5rem;
+  margin-top: .25rem;
+}
+.filter-reset-icon--svg {
+  width: 2rem;
+  height: 2.5rem;
 }
 </style>
