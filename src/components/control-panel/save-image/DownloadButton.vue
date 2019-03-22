@@ -28,14 +28,12 @@ export default {
         const ctx = canvas.getContext('2d');
         ctx.filter = this.image.filterString;
         ctx.drawImage(imageToDownload, 0, 0, this.image.width, this.image.height);
-        console.log(canvas)
-        console.log(ctx)
         canvas.toBlob(blob => {
           console.log(blob)
           const link = document.createElement('a');
           const url = URL.createObjectURL(blob);
           link.setAttribute('href', url);
-          link.setAttribute('download', 'filtered_image');
+          link.setAttribute('download', this.image.customImageName);
           link.click();
         })
       }

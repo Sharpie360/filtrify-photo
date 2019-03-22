@@ -87,7 +87,7 @@ Ep. 10
   * [x] Update getImageSize Fn
 * [x] Reset Filters Button component
 * [x] Reset Filter Double Click Event
-* [ ] Custom File Name input
+* [x] Custom File Name input
 * [ ] Display original Image dimensions
 
 Ep. 11
