@@ -8,7 +8,7 @@
 
     <div class="image-loader--input-wrapper flex-1">
       <input 
-        @input="setImageSource_STORE($event.target.value)"
+        @input="getImageSize($event)"
         type="text" 
         class="image-loader--input"
         id="image-loader--input"
@@ -24,7 +24,19 @@ import { mapActions } from 'vuex';
 
 export default {
   methods: {
-    ...mapActions(['setImageSource_STORE'])
+    ...mapActions(['setImageSource_STORE', 'setImageSize_STORE']),
+    getImageSize($event) {
+      const loadedImage = document.createElement('img');
+      loadedImage.onload = () => {
+        this.setImageSource_STORE($event.target.value);
+        const payload = {
+          width: loadedImage.width,
+          height: loadedImage.height
+        };
+        this.setImageSize_STORE(payload);
+      }
+      loadedImage.src = $event.target.value;
+    }
   }
 }
 </script>

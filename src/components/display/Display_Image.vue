@@ -4,21 +4,14 @@
     :style="{ 'filter': filters }"
     crossorigin="Anonymous"
     ref="image"
-    class="display-image">
-  
-
+    class="display-image"
+  >
 </template>
 
 <script>
 import { mapActions } from 'vuex';
 
 export default {
-  data () {
-    return {
-      width: 0,
-      height: 0,
-    }
-  },
   computed: {
     imageSource () {
       return this.$store.getters.getImageSource;
@@ -31,7 +24,6 @@ export default {
         filterString += `${name}(${current}${suffix}) `;
       })
       filterString = filterString.trim();
-      console.log(filterString);
       this.setFilterString_STORE(filterString);
       return filterString;
     }
@@ -39,24 +31,10 @@ export default {
   watch: {
     imageSource: function(val) {
       this.$refs.image.src = this.imageSource;
-      console.log(this.$refs.image.src)
-      setTimeout(() => {
-        this.getImageSize();
-      }, 500);
     }
   },
   methods: {
-    ...mapActions(['setImageSize_STORE', 'setFilterString_STORE']),
-    getImageSize() {
-      const image = document.querySelector('.display-image');
-      const imageCompedStyles = window.getComputedStyle(image);
-      console.log(imageCompedStyles.width, imageCompedStyles.height)
-      const payload = {
-        width: imageCompedStyles.width,
-        height: imageCompedStyles.height,
-      };
-      this.setImageSize_STORE(payload);
-    }
+    ...mapActions(['setFilterString_STORE']),
   }
 }
 </script>

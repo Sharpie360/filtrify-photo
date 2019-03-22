@@ -43,7 +43,7 @@ Ep. 04
 Ep. 05
 * [x] Build Canvas Component
 * [ ] Refactoring Vuex Store to use ES6 Destructuring
-* [ ] Bounce Canvas to DataURI Function
+* [x] Bounce Canvas to DataURI Function
   * [x] Set size based on Image size
 
 
@@ -79,11 +79,25 @@ Ep. 08
 
 Ep. 09
 * [x] Custom Google Font
-* [ ] Download Logic
-  * [ ] Update getImageSize Fn
 * [x] Overflow Scroll on Filters Panel :)
+* [x] Display Filter Values
+
+Ep. 10
+* [x] Download Logic
+  * [x] Update getImageSize Fn
 * [ ] Reset Filters Button component
-* [ ] Display Filter Values
+* [ ] Reset Filter Double Click Event
+* [ ] Custom File Name input
+  * [ ] PNG or JPG option?
+  * [ ] Build Component
+  * [ ] V-Model Select
+* [ ] Display original Image dimensions
+
+Ep. 11
+* [ ] Clean up code
+  * [ ] remove console logs
+  * [ ] 
+
 
 
 **SPRINT**
