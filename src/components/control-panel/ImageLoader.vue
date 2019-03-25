@@ -21,21 +21,21 @@
 <script>
 import eventBus from '../../eventBus.js';
 import { mapActions } from 'vuex';
-
+const corsProxy = 'http://localhost:1337/';
 export default {
   methods: {
     ...mapActions(['setImageSource_STORE', 'setImageSize_STORE']),
     getImageSize($event) {
       const loadedImage = document.createElement('img');
       loadedImage.onload = () => {
-        this.setImageSource_STORE($event.target.value);
+        this.setImageSource_STORE(`${corsProxy}${$event.target.value}`);
         const payload = {
           width: loadedImage.width,
           height: loadedImage.height
         };
         this.setImageSize_STORE(payload);
       }
-      loadedImage.src = $event.target.value;
+      loadedImage.src = `${corsProxy}${$event.target.value}`;
     }
   }
 }
