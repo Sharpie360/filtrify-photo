@@ -28,7 +28,8 @@ export default {
     getImageSize($event) {
       const loadedImage = document.createElement('img');
       loadedImage.onload = () => {
-        this.setImageSource_STORE(`${corsProxy}${$event.target.value}`);
+        // adding the proxy onload
+        this.setImageSource_STORE(loadedImage.src);
         const payload = {
           width: loadedImage.width,
           height: loadedImage.height
