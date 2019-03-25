@@ -127,7 +127,7 @@ const store = new Vuex.Store({
 
     // payload === loadedFilterData
     loadRemoteFilterData_MUTA(state, payload) {
-      state.filterData.filters = payload;
+      state.filterData = payload;
     },
 
   },

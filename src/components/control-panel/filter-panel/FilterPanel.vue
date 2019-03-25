@@ -45,15 +45,15 @@ export default {
   methods: {
     ...mapActions(['resetFilters_STORE', 'loadRemoteFilterData_STORE']),
     requestFilters() {
-      fetch('http://localhost:1337/filters', {
+      fetch('http://localhost:1337/api/filters/1', {
         headers: {
           'Content-Type': 'application/json'
         }
       })
         .then(res => res.json())
-        .then(loadedFilters => {
-          console.log(loadedFilters);
-          this.loadRemoteFilterData_STORE(...loadedFilters);
+        .then(remoteFilterData => {
+          console.log(remoteFilterData);
+          this.loadRemoteFilterData_STORE(remoteFilterData);
         });
     }
   }
