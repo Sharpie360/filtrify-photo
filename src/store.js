@@ -13,76 +13,80 @@ const store = new Vuex.Store({
       customImageName: '',
       filterString: '',
     },
-    filters: [
-      {
-        index: '',
-        name: 'brightness',
-        min: 50,
-        max: 150,
-        current: 100,
-        default: 100,
-        suffix: '%',
-      },
-      {
-        index: '',
-        name: 'contrast',
-        min: 0,
-        max: 250,
-        current: 100,
-        default: 100,
-        suffix: '%',
-      },
-      {
-        index: '',
-        name: 'grayscale',
-        min: 0,
-        max: 100,
-        current: 0,
-        default: 0,
-        suffix: '%',
-      },
-      {
-        index: '',
-        name: 'hue-rotate',
-        min: 0,
-        max: 360,
-        current: 0,
-        default: 0,
-        suffix: 'deg',
-      },
-      {
-        index: '',
-        name: 'invert',
-        min: 0,
-        max: 100,
-        current: 0,
-        default: 0,
-        suffix: '%',
-      },
-      {
-        index: '',
-        name: 'saturate',
-        min: 0,
-        max: 250,
-        current: 100,
-        default: 100,
-        suffix: '%',
-      },
-      {
-        index: '',
-        name: 'sepia',
-        min: 0,
-        max: 100,
-        current: 0,
-        default: 0,
-        suffix: '%',
-      },
-    ],
+    filterData: {
+      _id: 0,
+      name: 'Default Filter Set',
+      filters: [
+        {
+          index: '',
+          name: 'brightness',
+          min: 50,
+          max: 150,
+          current: 100,
+          default: 100,
+          suffix: '%',
+        },
+        {
+          index: '',
+          name: 'contrast',
+          min: 0,
+          max: 250,
+          current: 100,
+          default: 100,
+          suffix: '%',
+        },
+        {
+          index: '',
+          name: 'grayscale',
+          min: 0,
+          max: 100,
+          current: 0,
+          default: 0,
+          suffix: '%',
+        },
+        {
+          index: '',
+          name: 'hue-rotate',
+          min: 0,
+          max: 360,
+          current: 0,
+          default: 0,
+          suffix: 'deg',
+        },
+        {
+          index: '',
+          name: 'invert',
+          min: 0,
+          max: 100,
+          current: 0,
+          default: 0,
+          suffix: '%',
+        },
+        {
+          index: '',
+          name: 'saturate',
+          min: 0,
+          max: 250,
+          current: 100,
+          default: 100,
+          suffix: '%',
+        },
+        {
+          index: '',
+          name: 'sepia',
+          min: 0,
+          max: 100,
+          current: 0,
+          default: 0,
+          suffix: '%',
+        },
+      ],
+    },
   },
   getters: {
     getImage: state => state.image,
     getImageSource: state => state.image.source,
-    getFilters: state => state.filters,
+    getFilterData: state => state.filterData,
     getCustomName: state => state.image.customImageName,
   },
   mutations: {
@@ -91,8 +95,8 @@ const store = new Vuex.Store({
     },
 
     setFilterValue_MUTA(state, payload) {
-      state.filters[payload.index].index = payload.index;
-      state.filters[payload.index].current = payload.filterNewValue;
+      state.filterData.filters[payload.index].index = payload.index;
+      state.filterData.filters[payload.index].current = payload.filterNewValue;
     },
 
     setImageSize_MUTA(state, payload) {
@@ -105,35 +109,40 @@ const store = new Vuex.Store({
       state.image.customImageName = payload;
     },
 
-    // payload === filterString
+    // payload === filterDatatring
     setFilterString_MUTA(state, payload) {
       state.image.filterString = payload;
     },
 
     resetFilters_MUTA(state) {
-      state.filters.forEach((filter) => {
+      state.filterData.filters.forEach((filter) => {
         filter.current = filter.default;
       });
     },
 
     // payload === index
     resetFilter_MUTA(state, payload) {
-      state.filters[payload].current = state.filters[payload].default;
+      state.filterData.filters[payload].current = state.filterData[payload].default;
+    },
+
+    // payload === loadedFilterData
+    loadRemoteFilterData_MUTA(state, payload) {
+      state.filterData.filters = payload;
     },
 
   },
   actions: {
     // payload = imageSource
-    setImageSource_STORE(context, payload) {
-      context.commit('setImageSource_MUTA', payload);
+    setImageSource_STORE({ commit }, payload) {
+      commit('setImageSource_MUTA', payload);
     },
 
-    setFilterValue_STORE(context, payload) {
-      context.commit('setFilterValue_MUTA', payload);
+    setFilterValue_STORE({ commit }, payload) {
+      commit('setFilterValue_MUTA', payload);
     },
 
-    setImageSize_STORE(context, payload) {
-      context.commit('setImageSize_MUTA', payload);
+    setImageSize_STORE({ commit }, payload) {
+      commit('setImageSize_MUTA', payload);
     },
 
     setFilterString_STORE({ commit }, payload) {
@@ -146,6 +155,10 @@ const store = new Vuex.Store({
 
     resetFilter_STORE({ commit }, payload) {
       commit('resetFilter_MUTA', payload);
+    },
+
+    loadRemoteFilterData_STORE({ commit }, payload) {
+      commit('loadRemoteFilterData_MUTA', payload);
     },
   },
 });

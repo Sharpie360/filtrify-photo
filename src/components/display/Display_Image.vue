@@ -17,7 +17,7 @@ export default {
       return this.$store.getters.getImageSource;
     },
     filters () {
-      const filters = this.$store.getters.getFilters;
+      const filters = this.$store.getters.getFilterData.filters;
       let filterString = '';
       filters.forEach(filter => {
         const { name, current, suffix } = filter;

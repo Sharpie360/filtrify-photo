@@ -3,12 +3,15 @@
     <div class="filter-panel--header-group flexbox">
       <h2 class="filter-panel--title">Filters</h2>
       <span class="filter-reset-icon--outer">
-        <img 
+        <!-- <img 
           @click="resetFilters_STORE"
           class="filter-reset-icon--svg" 
           src="../../../assets/svg/noun_reset_415758.svg" 
           alt="reset by Hali Gali Harun from the Noun Project"
-        >
+        > -->
+        <button @click="requestFilters" class="load-filters">
+          Load
+        </button>
       </span>
     </div>
 
@@ -36,11 +39,23 @@ export default {
   },
   computed: {
     filters () {
-      return this.$store.getters.getFilters;
+      return this.$store.getters.getFilterData.filters;
     }
   },
   methods: {
-    ...mapActions(['resetFilters_STORE']),
+    ...mapActions(['resetFilters_STORE', 'loadRemoteFilterData_STORE']),
+    requestFilters() {
+      fetch('http://localhost:1337/filters', {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(res => res.json())
+        .then(loadedFilters => {
+          console.log(loadedFilters);
+          this.loadRemoteFilterData_STORE(...loadedFilters);
+        });
+    }
   }
 }
 </script>
