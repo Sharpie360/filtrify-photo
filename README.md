@@ -1,4 +1,14 @@
-# filtrify-photo
+# Filtrify Photo  
+
+> ### _An awesome-simple photo filtering app built with Vue.js and Vuex._  
+> You can check out the full [Filtrify Photo Series](https://www.youtube.com/playlist?list=PLFXBGOVoMkVkKXnWpboAuPGOo7-SB56aB) over on YouTube.  
+  
+_Author:_ **Sean Becker**  
+_Entity:_ **RabbitWerks JavaScript**
+
+
+### What is it?
+Filtrify Photo is a beginner friendly code-along project built is Vue.js and Vuex. There are mistakes along the way, but we work through each bug together and you wont miss any code. For the a-bit-more-experienced coders, we will be implementing a CORS proxy running on a simple backend node/express server to ensure we can use any image any user desires.
 
 ## Project setup
 ```
