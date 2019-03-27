@@ -21,7 +21,7 @@
 <script>
 import eventBus from '../../eventBus.js';
 import { mapActions } from 'vuex';
-const corsProxy = 'http://localhost:1337/';
+const corsProxy = 'https://filtrify-photo-backend-git-fp-01-error-handling.rabbitwerksjs.now.sh/';
 export default {
   methods: {
     ...mapActions(['setImageSource_STORE', 'setImageSize_STORE']),
