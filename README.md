@@ -2,11 +2,11 @@
 
 > ### _An awesome-simple photo filtering app built with Vue.js and Vuex._  
 > You can check out the full [Filtrify Photo Series](https://www.youtube.com/playlist?list=PLFXBGOVoMkVkKXnWpboAuPGOo7-SB56aB) over on YouTube.  
-
-_Project:_ **Filtrify Photo**
-_Development Area:_ **Frontend**
+  
+_Project:_ **Filtrify Photo**  
+_Development Area:_ **Frontend**  
 _Author:_ **Sean Becker**  
-_Entity:_ **RabbitWerks JavaScript**
+_Entity:_ **RabbitWerks JavaScript**  
 
 
 ### What is it?
