@@ -1,6 +1,12 @@
-# Filtrify Photo 
+# Filtrify Photo  
 
->_An awesome photo filtering app using Vue.js and Vuex._
+> ### _An awesome-simple photo filtering app built with Vue.js and Vuex._  
+> You can check out the full [Filtrify Photo Series](https://www.youtube.com/playlist?list=PLFXBGOVoMkVkKXnWpboAuPGOo7-SB56aB) over on YouTube.  
+
+_Project:_ **Filtrify Photo**  
+_Dev Area:_ **Frontend / Backend**  
+_Author:_ **Sean Becker**   
+_Entity:_ **RabbitWerks JavaScript**  
 
 ---
 
@@ -108,7 +114,7 @@ Ep. 12
   * [ ] Adding CORS headers to requests
   * [ ] URL handling
   * [ ] Error handling
-* Deploy to Now.sh
+* [ ] Deploy to Now.sh
   * [ ] Update frontend with deployed backend url
   * [ ] Test agains known cors issue images
 * [ ] Refactor backend
