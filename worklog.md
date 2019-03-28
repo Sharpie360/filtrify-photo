@@ -1,6 +1,12 @@
-# Filtrify Photo 
+# Filtrify Photo  
 
->_An awesome photo filtering app using Vue.js and Vuex._
+> ### _An awesome-simple photo filtering app built with Vue.js and Vuex._  
+> You can check out the full [Filtrify Photo Series](https://www.youtube.com/playlist?list=PLFXBGOVoMkVkKXnWpboAuPGOo7-SB56aB) over on YouTube.  
+
+_Project:_ **Filtrify Photo**  
+_Dev Area:_ **Frontend / Backend**  
+_Author:_ **Sean Becker**   
+_Entity:_ **RabbitWerks JavaScript**  
 
 ---
 
@@ -36,13 +42,13 @@ Ep. 04
   * [x] Update State
   * [x] Update CSS Variables
     * [x] In Component?
-* [ ] Build Canvas Component [out-of-time]
+* [ ] -Build Canvas Component- [out-of-time]
 
 
 
 Ep. 05
 * [x] Build Canvas Component
-* [ ] Refactoring Vuex Store to use ES6 Destructuring
+* [x] Refactoring Vuex Store to use ES6 Destructuring
 * [x] Bounce Canvas to DataURI Function
   * [x] Set size based on Image size
 
@@ -51,12 +57,12 @@ Ep. 05
 Ep. 06
 [RabbitWerks Discord Universe](https://discord.gg/bKVBPsq)
 * [x] Refactoring Vuex Store to use ES6 Destructuring
-* [ ] RabbitWerks Flexbox Utility Playground sneak peak
+* [x] RabbitWerks Flexbox Utility Playground sneak peak
 
 
 
 Ep. 07  
-* [ ] Fix bugs
+* [x] Fix bugs
   * [x] fix "GRAYSCALE" spelling mistake in Vuex Filters
   * [x] rewrite display-image component
     * [x] set $ref for Vue to target
@@ -85,18 +91,33 @@ Ep. 09
 Ep. 10
 * [x] Download Logic
   * [x] Update getImageSize Fn
-* [ ] Reset Filters Button component
-* [ ] Reset Filter Double Click Event
-* [ ] Custom File Name input
-  * [ ] PNG or JPG option?
+* [x] Reset Filters Button component
+* [x] Reset Filter Double Click Event
+* [x] Custom File Name input
+
+
+Ep. 11
+* [ ] PNG or JPG option
   * [ ] Build Component
   * [ ] V-Model Select
 * [ ] Display original Image dimensions
-
-Ep. 11
+* [ ] Deploy to Netlify
 * [ ] Clean up code
+  * [ ] update comments
   * [ ] remove console logs
-  * [ ] 
+  * [ ] remove EventBus
+
+
+Ep. 12
+* [ ] CORS-Adder Backend
+  * [ ] Node / Express webserver
+  * [ ] Adding CORS headers to requests
+  * [ ] URL handling
+  * [ ] Error handling
+* [ ] Deploy to Now.sh
+  * [ ] Update frontend with deployed backend url
+  * [ ] Test agains known cors issue images
+* [ ] Refactor backend
 
 
 
