@@ -36,13 +36,13 @@ Ep. 04
   * [x] Update State
   * [x] Update CSS Variables
     * [x] In Component?
-* [ ] Build Canvas Component [out-of-time]
+* [ ] -Build Canvas Component- [out-of-time]
 
 
 
 Ep. 05
 * [x] Build Canvas Component
-* [ ] Refactoring Vuex Store to use ES6 Destructuring
+* [x] Refactoring Vuex Store to use ES6 Destructuring
 * [x] Bounce Canvas to DataURI Function
   * [x] Set size based on Image size
 
@@ -51,12 +51,12 @@ Ep. 05
 Ep. 06
 [RabbitWerks Discord Universe](https://discord.gg/bKVBPsq)
 * [x] Refactoring Vuex Store to use ES6 Destructuring
-* [ ] RabbitWerks Flexbox Utility Playground sneak peak
+* [x] RabbitWerks Flexbox Utility Playground sneak peak
 
 
 
 Ep. 07  
-* [ ] Fix bugs
+* [x] Fix bugs
   * [x] fix "GRAYSCALE" spelling mistake in Vuex Filters
   * [x] rewrite display-image component
     * [x] set $ref for Vue to target
@@ -88,15 +88,30 @@ Ep. 10
 * [x] Reset Filters Button component
 * [x] Reset Filter Double Click Event
 * [x] Custom File Name input
-* [ ] Display original Image dimensions
+
 
 Ep. 11
 * [ ] PNG or JPG option?
   * [ ] Build Component
   * [ ] V-Model Select
+* [ ] Display original Image dimensions
+* [ ] Deploy to Netlify
 * [ ] Clean up code
+  * [ ] update comments
   * [ ] remove console logs
-  * [ ] 
+  * [ ] remove EventBus
+
+
+Ep. 12
+* [ ] CORS-Adder Backend
+  * [ ] Node / Express webserver
+  * [ ] Adding CORS headers to requests
+  * [ ] URL handling
+  * [ ] Error handling
+* Deploy to Now.sh
+  * [ ] Update frontend with deployed backend url
+  * [ ] Test agains known cors issue images
+* [ ] Refactor backend
 
 
 
