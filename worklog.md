@@ -97,9 +97,9 @@ Ep. 10
 
 
 Ep. 11
-* [ ] PNG or JPG option
-  * [ ] Build Component
-  * [ ] V-Model Select
+* [x] PNG or JPG option
+  * [x] Build Component
+  * [x] V-Model Select
 * [ ] Display original Image dimensions
 * [ ] Deploy to Netlify
 * [ ] Clean up code

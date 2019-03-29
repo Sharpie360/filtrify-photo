@@ -14,7 +14,14 @@
         id="image-loader--input"
       >
     </div>
-    
+    <div class="image-dimensions--outer flexbox-space-between flex-center">
+      <span class="image-dimensions">
+        Width: {{ imageSize.width }}px
+      </span>
+      <span class="image-dimensions">
+        Height: {{ imageSize.height }}px
+      </span>
+    </div>
   </div>
 </template>
 
@@ -23,6 +30,11 @@ import eventBus from '../../eventBus.js';
 import { mapActions } from 'vuex';
 
 export default {
+  computed: {
+    imageSize() {
+      return this.$store.getters.getImage;
+    }
+  },
   methods: {
     ...mapActions(['setImageSource_STORE', 'setImageSize_STORE']),
     getImageSize($event) {
