@@ -35,9 +35,9 @@ export default {
           const link = document.createElement('a');
           const url = URL.createObjectURL(blob);
           link.setAttribute('href', url);
-          link.setAttribute('download', 'filtered_image');
+          link.setAttribute('download', this.image.customImageName);
           link.click();
-        })
+        }, this.image.selectedFormat)
       }
       imageToDownload.src = this.image.source;
 
@@ -49,7 +49,7 @@ export default {
 
 <style scoped>
 .download-button--outer {
-  padding: .5rem 1rem;
+  padding: .5rem 0;
 }
 .download-button--inner {
   width: 50%;

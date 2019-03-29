@@ -10,8 +10,9 @@ const store = new Vuex.Store({
       width: 0,
       height: 0,
       source: '',
-      customImageName: '',
       filterString: '',
+      customImageName: '',
+      selectedFormat: 'image/png',
     },
     filters: [
       {
@@ -77,6 +78,7 @@ const store = new Vuex.Store({
     getImageSource: state => state.image.source,
     getFilters: state => state.filters,
     getCustomName: state => state.image.customImageName,
+    getSelectedFormat: state => state.image.selectedFormat,
   },
   mutations: {
     setImageSource_MUTA(state, payload) {
@@ -101,6 +103,11 @@ const store = new Vuex.Store({
     // payload === filterString
     setFilterString_MUTA(state, payload) {
       state.image.filterString = payload;
+    },
+
+    // payload === file format
+    setImageFormat_MUTA(state, payload) {
+      state.image.selectedFormat = payload;
     },
   },
   actions: {
