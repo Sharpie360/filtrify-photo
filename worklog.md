@@ -100,8 +100,8 @@ Ep. 11
 * [x] PNG or JPG option
   * [x] Build Component
   * [x] V-Model Select
-* [ ] Display original Image dimensions
-* [ ] Deploy to Netlify
+* [x] Display original Image dimensions
+* [x] Deploy to Netlify
 * [ ] Clean up code
   * [ ] update comments
   * [ ] remove console logs
