@@ -122,7 +122,7 @@ const store = new Vuex.Store({
 
     // payload === index
     resetFilter_MUTA(state, payload) {
-      state.filterData.filters[payload].current = state.filterData[payload].default;
+      state.filterData.filters[payload].current = state.filterData.filters[payload].default;
     },
 
     // payload === loadedFilterData

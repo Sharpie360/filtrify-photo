@@ -1,0 +1,38 @@
+# Filtrify Photo Fullstack Roadmap
+
+## Concept Mapping
+- User Profile
+  - Saved Filter Sets
+  - Saved Gradients
+- Control Panel
+  - Header
+    - Filters Tab
+    - Gradient Tab
+    - More Options Menu
+  - Filter Panel
+    - Filter Components
+    - Reset Filters Button
+    - Save Filters Button (User)
+  - Gradient Panel
+    - Linear/Radial Toggle
+      - save state of each for switching back and forth
+    - Linear Gradient
+      - 2, 3, 4 colors
+      - adjust angle
+      - adjust position?
+      - adjust color stop points
+      - custom colors
+      - intensity (opacity)
+    - Radial Gradient
+      - 2, 3, 4 colors
+      - adjust center point
+      - adjust color stop points
+      - custom colors
+      - intensity (opacity)
+    - Reset Gradient
+    - Save Gradient (User)
+  - More Options Tab
+    - Load Filter Set
+    - Load Gradient
+    - Randomize Filter Set
+    - Randomize Gradient

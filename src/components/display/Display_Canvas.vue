@@ -1,58 +1,78 @@
 <template>
-  <canvas 
-    id="canvas"
-    v-show="false"
-    :width="image.width"
-    :height="image.height">
-  </canvas>
+  <canvas
+    v-show="imageSource"
+    ref="canvas"
+    class="display-image"
+  ></canvas>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
+// https://thehorse.com/wp-content/uploads/2017/09/paint-horse-running-in-field.jpg
+
 export default {
+  data() {
+    return {
+      imageTag: null,
+    };
+  },
   computed: {
-    image () {
-      return this.$store.getters.getImage;
+    imageSource() {
+      return this.$store.getters.getImageSource;
     },
-    filters () {
-      return this.$store.getters.getFilters;
-    }
-  },
-  watch: {
-    filters: {
-      deep: true,
-      handler() {
-        this.loadImageToCanvas();
-      }
-    },
-    image: function() {
-      setTimeout(() => {
-        this.loadImageToCanvas();
-      }, 1000)
-    }
-  },
-  methods: {
-    loadImageToCanvas() {
-      const filters = this.filters;
+    filters() {
+      const filters = this.$store.getters.getFilterData.filters;
       let filterString = '';
-      filters.forEach(filter => {
-        filterString += `${filter.name}(${filter.current}${filter.suffix}) `
+      filters.forEach((filter) => {
+        const { name, current, suffix } = filter;
+        filterString += `${name}(${current}${suffix}) `;
       });
       filterString = filterString.trim();
-
-      const image = document.querySelector('.display-image');
-      if (image instanceof HTMLImageElement) {
-        const canvas = document.getElementById('canvas');
-        let ctx = canvas.getContext('2d');
-        ctx.filter = filterString;
-        ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
-      }
-    }
+      this.setFilterString_STORE(filterString);
+      return filterString;
+    },
   },
-}
+  watch: {
+    imageSource() {
+      const imageToDownload = new Image();
+      imageToDownload.crossOrigin = 'Anonymous';
+      imageToDownload.onload = () => {
+        this.drawImage(imageToDownload);
+        this.setImage(imageToDownload);
+      };
+      imageToDownload.src = this.imageSource;
+    },
+    filters() {
+      this.drawImage(this.imageTag);
+    },
+  },
+  methods: {
+    ...mapActions(['setFilterString_STORE']),
+    setImage(image) {
+      this.imageTag = image;
+    },
+    drawImage(image) {
+      const { canvas } = this.$refs;
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+      canvas.width = image.naturalWidth;
+      canvas.height = image.naturalHeight;
+      ctx.filter = this.filters;
+
+      ctx.drawImage(
+        image,
+        0,
+        0,
+      );
+    },
+  },
+};
 </script>
 
-<style>
-  canvas {
-    border: 1px solid #000;
-  }
+<style scoped>
+.display-image {
+  max-width: 96%;
+  max-height: 90%;
+}
 </style>
