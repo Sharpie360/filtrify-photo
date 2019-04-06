@@ -29,6 +29,9 @@
 import eventBus from '../../eventBus.js';
 import { mapActions } from 'vuex';
 
+// const corsProxy = 'http://127.0.0.1:1337/';
+const corsProxy = 'https://fp-backend.now.sh/';
+
 export default {
   computed: {
     imageSize() {
@@ -37,17 +40,18 @@ export default {
   },
   methods: {
     ...mapActions(['setImageSource_STORE', 'setImageSize_STORE']),
-    getImageSize($event) {
+    getImageSize($event) { 
       const loadedImage = document.createElement('img');
       loadedImage.onload = () => {
-        this.setImageSource_STORE($event.target.value);
+        this.setImageSource_STORE(loadedImage.src);
         const payload = {
           width: loadedImage.width,
           height: loadedImage.height
         };
         this.setImageSize_STORE(payload);
       }
-      loadedImage.src = $event.target.value;
+      loadedImage.src = `${corsProxy}${$event.target.value}`;
+      console.log(loadedImage.src)
     }
   }
 }

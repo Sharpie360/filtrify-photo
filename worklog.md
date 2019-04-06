@@ -109,15 +109,15 @@ Ep. 11
 
 
 Ep. 12
-* [ ] CORS-Adder Backend
-  * [ ] Node / Express webserver
-  * [ ] Adding CORS headers to requests
-  * [ ] URL handling
-  * [ ] Error handling
+* [x] CORS-Adder Backend
+  * [x] Node / Express webserver
+  * [x] Adding CORS headers to requests
+  * [x] URL handling
+  * [x] Error handling
 * [ ] Deploy to Now.sh
   * [ ] Update frontend with deployed backend url
   * [ ] Test agains known cors issue images
-* [ ] Refactor backend
+* [x] Refactor backend
 
 
 
