@@ -81,47 +81,47 @@ const store = new Vuex.Store({
     getSelectedFormat: state => state.image.selectedFormat,
   },
   mutations: {
-    setImageSource_MUTA(state, payload) {
-      state.image.source = payload;
+    setImageSource_MUTA({ image }, payload) {
+      image.source = payload;
     },
 
-    setFilterValue_MUTA(state, payload) {
-      state.filters[payload.index].index = payload.index;
-      state.filters[payload.index].current = payload.filterNewValue;
+    setFilterValue_MUTA({ filters }, { index, filterNewValue }) {
+      filters[index].index = index;
+      filters[index].current = filterNewValue;
     },
 
-    setImageSize_MUTA(state, payload) {
-      state.image.width = payload.width;
-      state.image.height = payload.height;
+    setImageSize_MUTA({ image }, { width, height }) {
+      image.width = width;
+      image.height = height;
     },
 
     // payload === value
-    setCustomImageName_MUTA(state, payload) {
-      state.image.customImageName = payload;
+    setCustomImageName_MUTA({ image }, payload) {
+      image.customImageName = payload;
     },
 
     // payload === filterString
-    setFilterString_MUTA(state, payload) {
-      state.image.filterString = payload;
+    setFilterString_MUTA({ image }, payload) {
+      image.filterString = payload;
     },
 
     // payload === file format
-    setImageFormat_MUTA(state, payload) {
-      state.image.selectedFormat = payload;
+    setImageFormat_MUTA({ image }, payload) {
+      image.selectedFormat = payload;
     },
   },
   actions: {
     // payload = imageSource
-    setImageSource_STORE(context, payload) {
-      context.commit('setImageSource_MUTA', payload);
+    setImageSource_STORE({ commit }, payload) {
+      commit('setImageSource_MUTA', payload);
     },
 
-    setFilterValue_STORE(context, payload) {
-      context.commit('setFilterValue_MUTA', payload);
+    setFilterValue_STORE({ commit }, payload) {
+      commit('setFilterValue_MUTA', payload);
     },
 
-    setImageSize_STORE(context, payload) {
-      context.commit('setImageSize_MUTA', payload);
+    setImageSize_STORE({ commit }, payload) {
+      commit('setImageSize_MUTA', payload);
     },
 
     setFilterString_STORE({ commit }, payload) {

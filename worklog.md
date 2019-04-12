@@ -114,11 +114,18 @@ Ep. 12
   * [x] Adding CORS headers to requests
   * [x] URL handling
   * [x] Error handling
-* [ ] Deploy to Now.sh
-  * [ ] Update frontend with deployed backend url
-  * [ ] Test agains known cors issue images
+* [x] Deploy to Now.sh
+  * [x] Update frontend with deployed backend url
+  * [x] Test agains known cors issue images
 * [x] Refactor backend
 
+
+Ep. 13
+* [x] RM eventbus
+* [x] RM console logs
+* [x] RM display container watchers
+* [x] RF capitalize filter
+* [x] Finish destructuring vuex store
 
 
 **SPRINT**

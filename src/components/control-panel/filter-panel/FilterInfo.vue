@@ -14,7 +14,13 @@ export default {
   props: ['filter'],
   filters: {
     capitalize: function (value) {
-      if (!value) return ''
+      if (!value) return '';
+      if (value.includes('-')) {
+        const capitalized = value.split('-')
+          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(' ');
+        return capitalized;
+      }
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
     }

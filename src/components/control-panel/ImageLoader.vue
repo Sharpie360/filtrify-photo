@@ -26,10 +26,8 @@
 </template>
 
 <script>
-import eventBus from '../../eventBus.js';
 import { mapActions } from 'vuex';
 
-// const corsProxy = 'http://127.0.0.1:1337/';
 const corsProxy = 'https://fp-backend.now.sh/';
 
 export default {
@@ -51,7 +49,6 @@ export default {
         this.setImageSize_STORE(payload);
       }
       loadedImage.src = `${corsProxy}${$event.target.value}`;
-      console.log(loadedImage.src)
     }
   }
 }
