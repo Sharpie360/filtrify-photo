@@ -13,19 +13,21 @@
 export default {
   props: ['filter'],
   filters: {
+    // eslint-disable-next-line object-shorthand, func-names
     capitalize: function (value) {
       if (!value) return '';
       if (value.includes('-')) {
         const capitalized = value.split('-')
-          .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
           .join(' ');
         return capitalized;
       }
-      value = value.toString()
-      return value.charAt(0).toUpperCase() + value.slice(1)
-    }
+      // eslint-disable-next-line no-param-reassign
+      value = value.toString();
+      return value.charAt(0).toUpperCase() + value.slice(1);
+    },
   },
-}
+};
 </script>
 
 <style scoped>

@@ -1,15 +1,15 @@
 <template>
   <div class="image-loader--outer flex-1 flexbox flexdir-col">
-    <label 
+    <label
       class="image-loader--label flex-1"
       for="image-loader--input"
       >Load Image
     </label>
 
     <div class="image-loader--input-wrapper flex-1">
-      <input 
+      <input
         @input="getImageSize($event)"
-        type="text" 
+        type="text"
         class="image-loader--input"
         id="image-loader--input"
       >
@@ -34,24 +34,24 @@ export default {
   computed: {
     imageSize() {
       return this.$store.getters.getImage;
-    }
+    },
   },
   methods: {
     ...mapActions(['setImageSource_STORE', 'setImageSize_STORE']),
-    getImageSize($event) { 
+    getImageSize($event) {
       const loadedImage = document.createElement('img');
       loadedImage.onload = () => {
         this.setImageSource_STORE(loadedImage.src);
         const payload = {
           width: loadedImage.width,
-          height: loadedImage.height
+          height: loadedImage.height,
         };
         this.setImageSize_STORE(payload);
-      }
+      };
       loadedImage.src = `${corsProxy}${$event.target.value}`;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>

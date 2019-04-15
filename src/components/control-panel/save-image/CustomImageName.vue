@@ -1,16 +1,15 @@
 <template>
   <div class="custom-image-name--outer flexbox flexdir-col">
-
-    <label 
+    <label
       class="custom-image-name--label flex-1"
       for="custom-image-name"
       >Custom Name
       </label>
 
     <div class="custom-image-name--input--outer">
-      <input 
+      <input
         v-model="customImageName_STORE"
-        type="text" 
+        type="text"
         class="custom-image-name--input--inner"
         id="custom-image-name"
       >
@@ -27,10 +26,10 @@ export default {
       },
       set(value) {
         this.$store.commit('setCustomImageName_MUTA', value);
-      }
-    }
+      },
+    },
   },
-}
+};
 </script>
 
 <style scoped>

@@ -1,6 +1,6 @@
 <template>
   <div class="image-format--outer">
-    <select 
+    <select
       v-model="selectFormat_STORE"
       class="image-format--input">
        <option value="image/png">PNG</option>
@@ -18,10 +18,10 @@ export default {
       },
       set(value) {
         this.$store.commit('setImageFormat_MUTA', value);
-      }
-    }
-  }
-}
+      },
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -33,5 +33,4 @@ export default {
   border: 2px solid var(--navbarBlack);
   font-size: .85rem;
 }
-
 </style>

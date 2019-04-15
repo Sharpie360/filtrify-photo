@@ -1,27 +1,27 @@
 <template>
   <div class="filter-input--outer">
     <filter-info :filter="filter"></filter-info>
-    <input 
+    <input
       v-model="filter.current"
       @mousemove="updateFilterValue(filter)"
       @change="updateFilterValue(filter)"
       :id="filter.name"
       :min="filter.min"
       :max="filter.max"
-      class="filter-input--input" 
-      type="range" 
+      class="filter-input--input"
+      type="range"
       >
   </div>
 </template>
 
 <script>
-import FilterInfo from './FilterInfo';
 import { mapActions } from 'vuex';
+import FilterInfo from './FilterInfo.vue';
 
 export default {
   props: ['filter', 'index'],
   components: {
-    'filter-info': FilterInfo
+    'filter-info': FilterInfo,
   },
   methods: {
     ...mapActions(['setFilterValue_STORE']),
@@ -31,9 +31,9 @@ export default {
         filterNewValue: filter.current,
       };
       this.setFilterValue_STORE(payload);
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -41,4 +41,3 @@ export default {
   width: 100%;
 }
 </style>
-

@@ -5,25 +5,23 @@
 </template>
 
 <script>
-import Display_Image from './Display_Image';
+import DisplayImage from './Display_Image.vue';
 
 export default {
   components: {
-    'display-image': Display_Image,
+    'display-image': DisplayImage,
   },
   computed: {
     filters() {
       return this.$store.getters.getFilters
-        .map((filter, index) => {
-          return {
-            name: filter.name,
-            currentValue: filter.current,
-            suffix: filter.suffix,
-          }
-        })
+        .map(filter => ({
+          name: filter.name,
+          currentValue: filter.current,
+          suffix: filter.suffix,
+        }));
     },
   },
-}
+};
 </script>
 
 <style scoped>

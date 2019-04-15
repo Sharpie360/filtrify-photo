@@ -3,7 +3,7 @@
     <h2 class="filter-panel--title">Filters</h2>
 
     <div class="filter-panel--input-group-wrapper flex-1 flexbox flexdir-col">
-      <filter-input 
+      <filter-input
         v-for="(filter, index) in filters" :key="index"
         :filter="filter"
         :index="index"
@@ -16,18 +16,18 @@
 </template>
 
 <script>
-import FilterInput from './FilterInput';
+import FilterInput from './FilterInput.vue';
 
 export default {
   components: {
-    'filter-input': FilterInput
+    'filter-input': FilterInput,
   },
   computed: {
-    filters () {
+    filters() {
       return this.$store.getters.getFilters;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>

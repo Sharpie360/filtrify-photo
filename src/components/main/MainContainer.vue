@@ -6,15 +6,15 @@
 </template>
 
 <script>
-import ControlPanel from '../control-panel/ControlPanel';
-import Display_Container from '../display/Display_Container';
+import ControlPanel from '../control-panel/ControlPanel.vue';
+import DisplayContainer from '../display/Display_Container.vue';
 
 export default {
   components: {
     'mc--control-panel': ControlPanel,
-    'mc--display-container': Display_Container,
-  }
-}
+    'mc--display-container': DisplayContainer,
+  },
+};
 </script>
 
 <style>
