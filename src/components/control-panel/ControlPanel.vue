@@ -7,17 +7,17 @@
 </template>
 
 <script>
-import ImageLoader from './ImageLoader';
-import FilterPanel from './filter-panel/FilterPanel';
-import SaveImagePanel from './save-image/SaveImagePanel';
+import ImageLoader from './ImageLoader.vue';
+import FilterPanel from './filter-panel/FilterPanel.vue';
+import SaveImagePanel from './save-image/SaveImagePanel.vue';
 
 export default {
   components: {
     'image-loader': ImageLoader,
     'filter-panel': FilterPanel,
-    'save-image-panel': SaveImagePanel
-  }
-}
+    'save-image-panel': SaveImagePanel,
+  },
+};
 </script>
 
 <style scoped>

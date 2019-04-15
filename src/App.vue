@@ -6,15 +6,15 @@
 </template>
 
 <script>
-import Navbar from './components/navbar/Navbar';
-import MainContainer from './components/main/MainContainer';
+import Navbar from './components/navbar/Navbar.vue';
+import MainContainer from './components/main/MainContainer.vue';
 
 export default {
   name: 'app',
   components: {
     'main--navbar': Navbar,
     'main--container': MainContainer,
-  }
+  },
 };
 </script>
 

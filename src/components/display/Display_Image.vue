@@ -1,6 +1,6 @@
 <template>
-  <img 
-    v-show="imageSource" 
+  <img
+    v-show="imageSource"
     :style="{ 'filter': filters }"
     crossorigin="Anonymous"
     ref="image"
@@ -13,30 +13,31 @@ import { mapActions } from 'vuex';
 
 export default {
   computed: {
-    imageSource () {
+    imageSource() {
       return this.$store.getters.getImageSource;
     },
-    filters () {
+    filters() {
       const filters = this.$store.getters.getFilters;
       let filterString = '';
-      filters.forEach(filter => {
+      filters.forEach((filter) => {
         const { name, current, suffix } = filter;
         filterString += `${name}(${current}${suffix}) `;
-      })
+      });
       filterString = filterString.trim();
       this.setFilterString_STORE(filterString);
       return filterString;
-    }
+    },
   },
   watch: {
-    imageSource: function(val) {
+    // eslint-disable-next-line object-shorthand, func-names
+    imageSource: function () {
       this.$refs.image.src = this.imageSource;
-    }
+    },
   },
   methods: {
     ...mapActions(['setFilterString_STORE']),
-  }
-}
+  },
+};
 </script>
 
 <style scoped>

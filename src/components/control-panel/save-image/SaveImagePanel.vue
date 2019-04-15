@@ -9,17 +9,17 @@
 </template>
 
 <script>
-import CustomImageName from './CustomImageName';
-import ImageFormat from './ImageFormat';
-import DownloadButton from './DownloadButton';
+import CustomImageName from './CustomImageName.vue';
+import ImageFormat from './ImageFormat.vue';
+import DownloadButton from './DownloadButton.vue';
 
 export default {
   components: {
     'custom-image-name': CustomImageName,
     'image-format': ImageFormat,
-    'download-button': DownloadButton
-  }
-}
+    'download-button': DownloadButton,
+  },
+};
 </script>
 
 <style>
@@ -31,4 +31,3 @@ export default {
   padding: 0 1rem;
 }
 </style>
-

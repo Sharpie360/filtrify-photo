@@ -7,15 +7,15 @@
 </template>
 
 <script>
-import Navbar_Brand from './Navbar_Brand';
-import Navbar_NavItem from './Navbar_NavItem';
+import NavbarBrand from './Navbar_Brand.vue';
+import NavbarNavItem from './Navbar_NavItem.vue';
 
 export default {
   components: {
-    'navbar--brand': Navbar_Brand,
-    'navbar--nav-item': Navbar_NavItem
-  }
-}
+    'navbar--brand': NavbarBrand,
+    'navbar--nav-item': NavbarNavItem,
+  },
+};
 </script>
 
 <style scoped>
